@@ -28,7 +28,7 @@ public interface GenericService<TEntidade extends GenericEntity, TRepository ext
 	}
 	
 	default void deleteById(Long id) throws Exception{
-		if (getRepository().existsById(id))
+		if (!getRepository().existsById(id))
 			throw new Exception("Não existe usuário com o Id: " + id);
 		getRepository().deleteById(id);
 	}
