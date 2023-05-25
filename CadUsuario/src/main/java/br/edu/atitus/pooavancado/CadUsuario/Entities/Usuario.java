@@ -1,4 +1,4 @@
-package br.edu.atitus.pooavancado.CadUsuario.Entities;
+package br.edu.atitus.pooavancado.CadUsuario.entities;
 
 import java.io.Serializable;
 
@@ -11,35 +11,15 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario implements Serializable{
+public class Usuario extends GenericEntity{
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
-	@Column(nullable = false, length = 150)
-	private String nome;
-	
-	@Column(nullable = true, length = 200)
+	@Column(length = 150, nullable = true)
 	private String email;
-	
 	@Column(nullable = false)
 	private boolean status;
 	
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	public String getEmail() {
 		return email;
 	}

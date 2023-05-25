@@ -1,20 +1,15 @@
 package br.edu.atitus.pooavancado.CadUsuario.services;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
 
-import br.edu.atitus.pooavancado.CadUsuario.Entities.Departamento;
+import br.edu.atitus.pooavancado.CadUsuario.entities.Departamento;
+import br.edu.atitus.pooavancado.CadUsuario.repositories.DepartamentoRepository;
 
-public interface DepartamentoService {
+public interface DepartamentoService extends GenericService<Departamento, DepartamentoRepository>{
 	
-	Departamento save(Departamento departamento) throws Exception;
 	
-	Page<Departamento> findByNome(Pageable pageable, String nome);
-	
-	Optional<Departamento> findById(long id);
-	
-	void deleteById(long id);
-
 }
